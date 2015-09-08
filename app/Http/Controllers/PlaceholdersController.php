@@ -20,7 +20,7 @@ class PlaceholdersController extends Controller {
    * @return Response
    */
   public function widthHeight($width, $height) {
-    $image = $this->image_manager->canvas($width, $height);
+    $image = $this->image_manager->canvas($width, $height, '#ffffff');
 
     $image->text($width .'x'. $height, $width / 2, $height / 2, function($font) {
       $font->file(base_path() . '/resources/fonts/OpenSans-Regular.ttf');
