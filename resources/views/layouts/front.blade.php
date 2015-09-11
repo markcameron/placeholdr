@@ -31,10 +31,6 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-  </head>
-
-  <body data-spy="scroll" data-offset="20" data-target="#navbar">
-
     <script>
      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -44,6 +40,10 @@
      ga('create', 'UA-67364324-1', 'auto');
      ga('send', 'pageview');
     </script>
+
+  </head>
+
+  <body data-spy="scroll" data-offset="20" data-target="#navbar">
 
     <div class="logo-menu">
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation" data-spy="affix" data-offset-top="50">
