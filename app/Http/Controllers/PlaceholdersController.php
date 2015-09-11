@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 
 use Intervention\Image\ImageManager;
+use App\Events\ImageRequested;
+use Illuminate\Http\Request;
 
 class PlaceholdersController extends Controller {
 
@@ -19,7 +21,7 @@ class PlaceholdersController extends Controller {
    * @param  int  $id
    * @return Response
    */
-  public function widthHeight($width, $height) {
+  public function widthHeight(Request $request, $width, $height) {
     $image = $this->image_manager->canvas($width, $height, '#ffffff');
 
     $image->text($width .'x'. $height, $width / 2, $height / 2, function($font) {
@@ -30,6 +32,8 @@ class PlaceholdersController extends Controller {
       $font->valign('center');
       $font->angle(0);
     });
+
+    event(new ImageRequested($request));
 
 		$response = response()->make($image->encode($this->format), 200);
 		$response->header('Content-Type', 'image/'. $this->format);
